@@ -23,4 +23,60 @@
       </plugin>
     </plugins>
   </build>
+  <dependencies>
+  	<!-- DEPENDENCA PARA UTILIZAR SPRINGMVC-->
+  	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+		<version>5.1.4.RELEASE</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
+	<!-- DEPENDENCIA PARA MANEJAR VALIDACIONES -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>6.0.13.Final</version>
+		</dependency>
+
+	<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+	<!-- DEPENDENCIA PARA UTILIZAR POSTGRESQL -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.5</version>
+		</dependency>
+	<!-- DEPENDENCIA PARA MANEJAR LOS ENTITYMANAGER -->
+	<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>5.4.0.Final</version>
+		</dependency>
+
+	<!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
+	<!-- DEPENDENCIA PARA UTILIZAR EL PATRON ORM -->	
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>5.1.4.RELEASE</version>
+		</dependency>
+		
+	<!-- https://mvnrepository.com/artifact/jstl/jstl -->
+	<!-- DEPENDENCA PARA UTILIZAR LAS TAGS JSTL -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+	<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa -->
+	<!-- DEPENDENCIA PARA MANEJAR LOS REPOSITORIOS -->	
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>2.1.5.RELEASE</version>
+		</dependency>
+	
+  </dependencies>
 </project>
