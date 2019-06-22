@@ -30,9 +30,6 @@ public class Usuario {
 	@NotNull
 	@Column(name="clave")
 	private String clave;
-	
-	@Column(name="tipousuario")
-	private String tipousuario;
 
 	public Usuario() {
 		super();
@@ -61,16 +58,6 @@ public class Usuario {
 	public void setClave(String clave) {
 		this.clave = clave;
 	}
-
-	public String getTipousuario() {
-		return tipousuario;
-	}
-
-	public void setTipousuario(String tipousuario) {
-		this.tipousuario = tipousuario;
-	}
-	
-	
 	
 	
 }

@@ -17,34 +17,51 @@
 
 </style>
 
-
+<c:forEach items="${students}" var="students">
+				<tr>
+					<td>${students.sName}</td>
+					<td>${students.lName}</td>
+					<td>${students.sAge}</td>
+					<td>${students.activoDelegate}</td>
+					<td><input type="button" value="Editar" onclick="location.href='${pageContext.request.contextPath}/editar?cstudent=${students.cCLiente}'"></td>
+				</tr>
+					
+			</c:forEach>
 <title>Branches</title>
 </head>
 <body>
-	<h1>List of branches.</h1>
+	<h2>List of branches.</h2><br>
 	<div class="table-responsive center">          
   		<table class="table table-hover">
     		<thead>
       			<tr>
-        			<th>#</th>
-        			<th>Firstname</th>
-        			<th>Lastname</th>
-        			<th>Age</th>
-        			<th>City</th>
-        			<th>Country</th>
+        			<th>Name</th>
+        			<th>Location</th>
+        			<th>Opening</th>
+        			<th>Closing</th>
+        			<th>Tables</th>
+        			<th>Manager</th>
         			<th>Action</th>
       			</tr>
     		</thead>
     	<tbody>
-      		<tr>
-        		<td>1</td>
-        		<td>Anna</td>
-        		<td>Pitt</td>
-        		<td>35</td>
-        		<td>New York</td>
-        		<td>USA</td>
-        		<td>BotonesWe</td>
-      		</tr>
+        		<c:forEach items="${sucursales}" var="sucursales">
+        			<tr>
+        				<td>${sucursales.nombre}</td>
+        				<td>${sucursales.ubicacion}</td>
+        				<td>${sucursales.horarioapertura}</td>
+        				<td>${sucursales.horariocierre}</td>
+        				<td>${sucursales.nmesas}</td>
+        				<td>${sucursales.nomgerente}</td>
+        				<td>
+        				<div class="btn-group">
+  							<button type="button" class="btn btn-primary">View</button>
+  							<button type="button" class="btn btn-success">Edit</button>
+  							<button type="button" class="btn btn-danger">Delete</button>
+						</div>
+        				</td>	
+        			</tr>
+        		</c:forEach>
     	</tbody>
   		</table>
   	</div>

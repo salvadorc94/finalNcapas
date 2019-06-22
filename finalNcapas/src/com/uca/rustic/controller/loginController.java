@@ -11,15 +11,19 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.uca.rustic.domain.Sucursal;
 import com.uca.rustic.domain.Usuario;
-import com.uca.rustic.repositories.UsuarioRepository;
+import com.uca.rustic.services.SucursalServiceImp;
+import com.uca.rustic.services.UsuarioServiceImp;
 
 @Controller
 public class loginController {
-	
-	@Autowired
-	public UsuarioRepository usuariorepository;
 
+	@Autowired
+	public UsuarioServiceImp usuarioService;
+	@Autowired
+	public SucursalServiceImp sucursalService;
+	
 	@RequestMapping("/")
 	public ModelAndView index() {
 		ModelAndView mav = new ModelAndView();
@@ -35,9 +39,20 @@ public class loginController {
 		if(result.hasErrors()) {
 			mav.setViewName("login");
 		}else{
-			List<Usuario> results = usuariorepository.findByUsuarioAndClave(user.getUsuario(), user.getClave());
+			List<Usuario> results = null;
+			
+			try {
+				results = usuarioService.findByUsuarioAndClave(user.getUsuario(), user.getClave());
+			}catch (Exception e){
+				
+			}
+			
 			if(results.size()==1) {
-				//Sucursal repositorio para llenar aquella babosada :'v
+				List<Sucursal> sucursales = null;
+				try {
+					sucursales = sucursalService.findAll();
+				}catch(Exception e) {}
+				mav.addObject("sucursales", sucursales);
 				mav.setViewName("sucursales");
 			}else {
 				mav.addObject("mal","Invalid Credentials");
