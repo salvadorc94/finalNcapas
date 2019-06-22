@@ -37,7 +37,8 @@ public class loginController {
 		}else{
 			List<Usuario> results = usuariorepository.findByUsuarioAndClave(user.getUsuario(), user.getClave());
 			if(results.size()==1) {
-				//mav.setViewName("asd");
+				//Sucursal repositorio para llenar aquella babosada :'v
+				mav.setViewName("sucursales");
 			}else {
 				mav.addObject("mal","Invalid Credentials");
 				mav.setViewName("login");

@@ -48,7 +48,7 @@
 		<form:errors path="clave" cssStyle="color: #ff0000;"/><br>
 		
 		<input type="submit" value="Sign In"><br>
-		<label>${mal}</label>
+		<label><p style="color: red">${mal}</p></label> <!-- TODO: revisar color del mensaje de error --> 
 	</form:form>
 </div>
 </div>
