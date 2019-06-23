@@ -26,6 +26,17 @@ public class SucursalServiceImp implements SucursalService {
 	public void delete(int id) {
 		sucursalrepository.deleteById(id);
 	}
+
+	@Override
+	public Sucursal findOne(Integer id) {
+		return sucursalrepository.getOne(id);
+	}
+
+	@Transactional
+	@Override
+	public void insert(Sucursal s) {
+		sucursalrepository.save(s);
+	}
 	
 	
 

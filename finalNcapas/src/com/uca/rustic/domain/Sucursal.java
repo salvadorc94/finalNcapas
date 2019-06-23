@@ -47,7 +47,6 @@ public class Sucursal {
 	@Column(name = "horariocierre")
 	private String horariocierre;
 	
-	@NotEmpty(message="Number of tables can't be empty")
 	@Min(1)
 	@NotNull
 	@Column(name = "nmesas")

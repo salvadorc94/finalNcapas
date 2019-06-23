@@ -21,7 +21,8 @@
 <title>Branches</title>
 </head>
 <body>
-	<h2 id="prueba">List of branches.</h2><br>
+	<h2 id="prueba">List of branches.</h2>
+		<input  class="btn btn-success" type="button" value="New Branch" onclick="location.href='${pageContext.request.contextPath}/n'"> <br>
 	<div class="table-responsive center">          
   		<table class="table table-hover">
     		<thead>
@@ -47,7 +48,7 @@
         				<td>
         				<div class="btn-group">
   							<input type="button" class="btn btn-primary" value="View" onclick="location.href='${pageContext.request.contextPath}/view?cbr=${sucursales.codigo}'"/>
-  							<input type="button" class="btn btn-success" value="Edit" onclick="location.href='${pageContext.request.contextPath}/edit?cbr=${sucursales.codigo}'"/>
+  							<input type="button" class="btn btn-success" value="Edit" onclick="location.href='${pageContext.request.contextPath}/e?cbr=${sucursales.codigo}'"/>
   							<input type="button" class="btn btn-danger" value="Delete" onclick="del('${sucursales.codigo}','${pageContext.request.contextPath}')"/>
 						</div>
         				</td>	
