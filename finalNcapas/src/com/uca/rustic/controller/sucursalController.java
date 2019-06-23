@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.uca.rustic.domain.Empleado;
 import com.uca.rustic.domain.Sucursal;
 import com.uca.rustic.services.SucursalService;
 
@@ -20,6 +21,19 @@ public class sucursalController {
 
 	@Autowired
 	public SucursalService sucursalService;
+	
+	
+	@RequestMapping("/sucursales")
+	public ModelAndView sucursales() {
+		ModelAndView mav = new ModelAndView();
+		List<Sucursal> sucursales = null;
+		try {
+			sucursales = sucursalService.findAll();
+		}catch(Exception e) {}
+		mav.addObject("sucursales", sucursales);
+		mav.setViewName("sucursales");
+		return mav;
+	}
 	
 	
 	@RequestMapping("/e")
@@ -95,10 +109,16 @@ public class sucursalController {
 	}
 	
 	@RequestMapping("/view")
-	public ModelAndView view() {
+	public ModelAndView view(@RequestParam("cbr") Integer code) {
 		ModelAndView mav = new ModelAndView();
-		
-		
+		Sucursal sucursal = null;
+		try {
+			sucursal = sucursalService.findOne(code);
+		}catch(Exception e) {}
+		List<Empleado> empleados = sucursal.getEmpleados();
+		mav.addObject("sucursal",sucursal);
+		mav.addObject("empleados",empleados);
+		mav.setViewName("empleados");
 		return mav;
 	}
 }

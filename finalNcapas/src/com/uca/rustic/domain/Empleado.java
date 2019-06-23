@@ -30,7 +30,6 @@ public class Empleado {
 	@Column(name = "nombre")
 	private String nombre;
 	
-	@NotEmpty(message="Age can't be empty")
 	@Min(1)
 	@NotNull
 	@Column(name = "edad")

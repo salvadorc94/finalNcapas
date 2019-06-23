@@ -21,7 +21,7 @@
 <title>Branches</title>
 </head>
 <body>
-	<h2 id="prueba">List of branches.</h2>
+	<h2 id="prueba">List of branches.</h2> <input  class="btn btn-info" type="button" value="Refresh" onclick="location.href='${pageContext.request.contextPath}/sucursales'">
 		<input  class="btn btn-success" type="button" value="New Branch" onclick="location.href='${pageContext.request.contextPath}/n'"> <br>
 	<div class="table-responsive center">          
   		<table class="table table-hover">
