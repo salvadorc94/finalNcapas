@@ -34,7 +34,7 @@ public class JpaConfiguration {
 	}
 	
 	
-	private String Url="jdbc:postgresql://127.0.0.1:5432/restaurante";
+	private String Url="jdbc:postgresql://127.0.0.1:5432/tareaNCapas";
 	
 	@Bean
 	public DataSource dataSource() {
