@@ -17,20 +17,11 @@
 
 </style>
 
-<c:forEach items="${students}" var="students">
-				<tr>
-					<td>${students.sName}</td>
-					<td>${students.lName}</td>
-					<td>${students.sAge}</td>
-					<td>${students.activoDelegate}</td>
-					<td><input type="button" value="Editar" onclick="location.href='${pageContext.request.contextPath}/editar?cstudent=${students.cCLiente}'"></td>
-				</tr>
-					
-			</c:forEach>
+			
 <title>Branches</title>
 </head>
 <body>
-	<h2>List of branches.</h2><br>
+	<h2 id="prueba">List of branches.</h2><br>
 	<div class="table-responsive center">          
   		<table class="table table-hover">
     		<thead>
@@ -55,9 +46,9 @@
         				<td>${sucursales.nomgerente}</td>
         				<td>
         				<div class="btn-group">
-  							<button type="button" class="btn btn-primary">View</button>
-  							<button type="button" class="btn btn-success">Edit</button>
-  							<button type="button" class="btn btn-danger">Delete</button>
+  							<input type="button" class="btn btn-primary" value="View" onclick="location.href='${pageContext.request.contextPath}/view?cbr=${sucursales.codigo}'"/>
+  							<input type="button" class="btn btn-success" value="Edit" onclick="location.href='${pageContext.request.contextPath}/edit?cbr=${sucursales.codigo}'"/>
+  							<input type="button" class="btn btn-danger" value="Delete" onclick="del('${sucursales.codigo}','${pageContext.request.contextPath}')"/>
 						</div>
         				</td>	
         			</tr>
@@ -65,6 +56,15 @@
     	</tbody>
   		</table>
   	</div>
-</div>
+<script type='text/javascript'>
+function del(c,f) {
+  var box = confirm("Are you sure you want to delete the branch?");
+  if(box == true){
+	  var local = "http://localhost:8080/"
+	  var url = local.concat(f,"/del?cbr=",c);
+	  location.href = url;
+  }
+}
+</script>
 </body>
 </html>

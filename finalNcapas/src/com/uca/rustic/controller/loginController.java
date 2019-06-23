@@ -13,16 +13,18 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.uca.rustic.domain.Sucursal;
 import com.uca.rustic.domain.Usuario;
+import com.uca.rustic.services.SucursalService;
 import com.uca.rustic.services.SucursalServiceImp;
+import com.uca.rustic.services.UsuarioService;
 import com.uca.rustic.services.UsuarioServiceImp;
 
 @Controller
 public class loginController {
 
 	@Autowired
-	public UsuarioServiceImp usuarioService;
+	public UsuarioService usuarioService;
 	@Autowired
-	public SucursalServiceImp sucursalService;
+	public SucursalService sucursalService;
 	
 	@RequestMapping("/")
 	public ModelAndView index() {

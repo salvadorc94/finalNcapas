@@ -6,4 +6,7 @@ import com.uca.rustic.domain.Sucursal;
 
 public interface SucursalService {
 	public List<Sucursal> findAll();
+	
+	
+	public void delete(int id);
 }
